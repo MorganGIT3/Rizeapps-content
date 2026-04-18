@@ -28,6 +28,42 @@ export function isOverdue(deadline) {
   return new Date(deadline) < new Date() 
 }
 
+export function addDaysToNow(days) {
+  const date = new Date()
+  date.setDate(date.getDate() + Number(days || 0))
+  return date.toISOString()
+}
+
+export function isDue(dueAt) {
+  return new Date(dueAt).getTime() <= Date.now()
+}
+
+export function normalizePhoneNumber(phone) {
+  return String(phone || '').replace(/\D/g, '')
+}
+
+export function getWhatsappLink(phone) {
+  const normalized = normalizePhoneNumber(phone)
+  return normalized ? `https://wa.me/${normalized}` : ''
+}
+
+export function normalizeInstagramUrl(url) {
+  const value = String(url || '').trim()
+  if (!value) return ''
+  if (/^https?:\/\//i.test(value)) return value
+  return `https://${value}`
+}
+
+export function isValidHttpUrl(url) {
+  if (!url) return false
+  try {
+    const parsed = new URL(url)
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:'
+  } catch {
+    return false
+  }
+}
+
 export function getDailyChecklist() {
   return [
     { id: 'tofu1', label: 'TOFU 1 posté', category: 'content' },

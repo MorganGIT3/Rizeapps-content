@@ -6,6 +6,7 @@ import YouTube from './pages/YouTube'
 import Stories from './pages/Stories'
 import Tasks from './pages/Tasks'
 import Workflow from './pages/Workflow'
+import FollowUps from './pages/FollowUps'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         {activePage === 'stories' && <Stories />}
         {activePage === 'tasks' && <Tasks />}
         {activePage === 'workflow' && <Workflow />}
+        {activePage === 'followups' && <FollowUps />}
       </main>
     </div>
   )

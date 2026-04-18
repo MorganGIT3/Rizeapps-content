@@ -1,4 +1,4 @@
-import { Smartphone, Video, BookOpen, CheckSquare, GitBranch, LayoutDashboard, Menu, X } from 'lucide-react'
+import { Smartphone, Video, BookOpen, CheckSquare, GitBranch, LayoutDashboard, Menu, X, PhoneCall } from 'lucide-react'
 import logoRize from '../../logo rize.png'
 
 const menuItems = [
@@ -7,6 +7,7 @@ const menuItems = [
   { id: 'youtube', label: 'YouTube', icon: Video },
   { id: 'stories', label: 'Stories', icon: BookOpen },
   { id: 'tasks', label: 'Tâches', icon: CheckSquare },
+  { id: 'followups', label: 'Relances', icon: PhoneCall },
   { id: 'workflow', label: 'Tunnel', icon: GitBranch },
 ]
 
